@@ -21,10 +21,12 @@ Step by step algorithm and code breakdown for sensor fusion of GPS and IMU
 ![](images/yaw.png)
 ![](images/rotational_matrix.png)
 9) We will get the (Ax, Ay, Az)--> Accleration along world coordinate by multiplying R^-1 and (ax,ay,az). Where R is the obtained rotational matrix.
+
 ![](images/acc_world.png)
 
 ### INSIDE THE AHRS:
 1) Before computing normalization is done in each step,using Fast invere square root. It is just like the unit vector we calculate... unit vector perpendicular to a given vector.
+
 ![](images/sqrt.png)
 ![](images/normalization.png)
 ![](images/newtons_method.png)

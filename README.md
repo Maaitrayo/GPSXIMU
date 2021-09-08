@@ -51,7 +51,10 @@ b. Else, if your sensor fusion has all the three sensor(accelerometer, gyroscope
 3) From the prediction step we get an initial estimate of waht our position and velocity is in the corresponding X and Y direction.
 4) We then pass our initial estimate in the updation step where we use the data from the GPS sensor to further improve our estimate and provide the final output, calculating the kalman gain.
 5) I have used other functions like get_X_Y for plotting the data that we are getting using matplotlib to compare the results.
-6) To give an overview of what I am doing, here it is,...<br /> 
+6) Q matrix is the process covariance noise matrix.
+
+![](images/Q_matrix.png)
+7) To give an overview of what I am doing, here it is,...<br /> 
 <pre>
 	a) I am creating a list, and I am appending the elements(lets say, position at x) to it.<br />
 	b) So after the loop terminates I get a complete list of values.<br />

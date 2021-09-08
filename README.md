@@ -6,10 +6,13 @@
 	2) GPS UPADTE IN KALMAN FILTERING STEP
 
 ## IMU SENSOR FUSION:
-1) Get readings from the IMU sensor.
-	a. If the sensor does not contain any magnetometer sensor then go for normal IMU update(6dof)
-	b. Else, if your sensor fusion has all the three sensor(accelerometer, gyroscope, magnetometer), i.e, 9dof, go for Madgwick update.
+1) Get readings from the IMU sensor.<br />
+<pre>a. If the sensor does not contain any magnetometer sensor then go for normal IMU update(6dof).<br />
+b. Else, if your sensor fusion has all the three sensor(accelerometer, gyroscope, magnetometer), 
+   i.e, 9dof, go for Madgwick update.<br />
+</pre>
 2) read all the datas, (ax,ay,az,gx,gy,gz,mx,my,mz)
+
 3) for (mx,my,mz), we will have to reference the direction of Earth's magnetic field, this is used as a compensation for distortion of earth's magnetic feild, aka, offset calibaration.
 4) After that we get cleaned (mx,my,mz)
 5) then we will have to pass all the datas in point(2) through an AHRS(Attitude heading and REferance system). This is wgere the sensor fusion occurs.
@@ -48,8 +51,10 @@
 3) From the prediction step we get an initial estimate of waht our position and velocity is in the corresponding X and Y direction.
 4) We then pass our initial estimate in the updation step where we use the data from the GPS sensor to further improve our estimate and provide the final output, calculating the kalman gain.
 5) I have used other functions like get_X_Y for plotting the data that we are getting using matplotlib to compare the results.
-6) To give an overview of what I am doing, here it is,... 
-	a) I am creating a list, and I am appending the elements(lets say, position at x) to it.
-	b) So after the loop terminates I get a complete list of values.
-	c) No I am combining the list which has values in x with its corresponding values in y. Using np.stack along axis=1.
-	d) Now I get a 2D array containing X and y positions which I can plot easily.   
+6) To give an overview of what I am doing, here it is,...<br /> 
+<pre>
+	a) I am creating a list, and I am appending the elements(lets say, position at x) to it.<br />
+	b) So after the loop terminates I get a complete list of values.<br />
+	c) No I am combining the list which has values in x with its corresponding values in y. Using np.stack along axis=1.<br />
+	d) Now I get a 2D array containing X and y positions which I can plot easily.<br />   
+</pre>

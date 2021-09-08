@@ -39,6 +39,8 @@ b. Else, if your sensor fusion has all the three sensor(accelerometer, gyroscope
 ![](images/step_1.png)
 ![](images/1.png)
 
+******************** the AHRS part is not complete will be updating it soon ********************
+
 ## GPS UPADTE IN KALMAN FILTERING STEP:
 
 1) Kalman filtering is divided into two steps, Predict and update.

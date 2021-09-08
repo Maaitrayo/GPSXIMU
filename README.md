@@ -17,8 +17,8 @@ Step by step algorithm and code breakdown for sensor fusion of GPS and IMU
 ![](images/quaternion.png)
 7) After that we have to get the pitch, yawm roll, from the quaternion itself.
 ![](images/roll_pitch_yaw.png) 
-8) From the computed (roll pitch yaw), we will get the rotational matrix to compute the acceleration in the world coordinate.
 ![](images/yaw.png)
+8) From the computed (roll pitch yaw), we will get the rotational matrix to compute the acceleration in the world coordinate.
 ![](images/rotational_matrix.png)
 9) We will get the (Ax, Ay, Az)--> Accleration along world coordinate by multiplying R^-1 and (ax,ay,az). Where R is the obtained rotational matrix.
 
@@ -32,6 +32,7 @@ Step by step algorithm and code breakdown for sensor fusion of GPS and IMU
 ![](images/newtons_method.png)
 
 2) STEP 1: 
+
 ![](images/step_1.png)
 ![](images/1.png)
 
@@ -39,9 +40,11 @@ Step by step algorithm and code breakdown for sensor fusion of GPS and IMU
 
 1) Kalman filtering is divided into two steps, Predict and update.
 2) In the prediction step we fee in the accelerometer data(Ax, Ay) and we inititalze the initial position directly from the GPS sensor reading.
-   Similarly we adjust the initial covariance matrix having initial estimate in its state as less and the initial estimate in its velocity high.
+   Similarly we adjust the initial covariance matrix having initial estimate in its state as less and the initial estimate in its velocity, high.
+   
 ![](images/predict_var.png)
-![](images/equation.png)
+![](images/equation.jpg)
+
 3) From the prediction step we get an initial estimate of waht our position and velocity is in the corresponding X and Y direction.
 4) We then pass our initial estimate in the updation step where we use the data from the GPS sensor to further improve our estimate and provide the final output, calculating the kalman gain.
 5) I have used other functions like get_X_Y for plotting the data that we are getting using matplotlib to compare the results. 

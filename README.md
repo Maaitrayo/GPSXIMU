@@ -1,5 +1,5 @@
 # GPSXIMU
-Step by step algorithm and code breakdown for sensor fusion of GPS and IMU
+## Step by step algorithm and code breakdown for sensor fusion of GPS and IMU USING KALMAN FILTER
 
 ## This is divided into two parts:
 	1) IMU SENSOR FUSION
